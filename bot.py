@@ -14,9 +14,9 @@ from PIL import Image
 import os
 import re
 import random
-from dotenv import load_dotenv
-load_dotenv()
-token = os.environ.get('token')
+#from dotenv import load_dotenv
+#load_dotenv()
+token = "5711397003:AAHmtfxYoNWUHaSTa10jw-r-fbrq9_WZCDw"
 print (token)
 updater = Updater(token, use_context=True)
 bo = bot.Bot(token)
