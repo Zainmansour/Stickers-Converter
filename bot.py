@@ -81,5 +81,5 @@ updater.dispatcher.add_handler(CommandHandler('use', use))
 updater.dispatcher.add_handler(MessageHandler(Filters.text, unknown))
 updater.dispatcher.add_handler(MessageHandler(Filters.photo, photos))
 
-updater.start_webhook(listen="0.0.0.0", port=int(PORT), url_path=token)
+updater.start_webhook(listen="127.0.0.1", port=int(PORT), url_path=token)
 updater.bot.setWebhook('https://example-telebot.onrender.com/' + token)
