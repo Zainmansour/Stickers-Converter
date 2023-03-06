@@ -20,7 +20,7 @@ token = "5711397003:AAHmtfxYoNWUHaSTa10jw-r-fbrq9_WZCDw"
 print (token)
 updater = Updater(token, use_context=True)
 bo = bot.Bot(token)
-PORT = int(os.environ.get('PORT', 10000))
+PORT = 88
 
 def start(update: Update, context: CallbackContext):
     update.message.reply_text("""
