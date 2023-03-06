@@ -20,7 +20,7 @@ token = "5711397003:AAHmtfxYoNWUHaSTa10jw-r-fbrq9_WZCDw"
 print (token)
 updater = Updater(token, use_context=True)
 bo = bot.Bot(token)
-
+PORT = int(os.environ.get('PORT', 10000))
 
 def start(update: Update, context: CallbackContext):
     update.message.reply_text("""
@@ -80,4 +80,6 @@ updater.dispatcher.add_handler(CommandHandler('help', help))
 updater.dispatcher.add_handler(CommandHandler('use', use))
 updater.dispatcher.add_handler(MessageHandler(Filters.text, unknown))
 updater.dispatcher.add_handler(MessageHandler(Filters.photo, photos))
-updater.start_polling()
+
+updater.start_webhook(listen="0.0.0.0", port=int(PORT), url_path=token)
+updater.bot.setWebhook('https://example-telebot.onrender.com/' + token)
